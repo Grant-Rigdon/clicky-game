@@ -15,10 +15,11 @@ class App extends Component {
 
   clickImg = id => {
     // Filter this.state.images for images with an id  equal to the id being passed
-    const selected = (this.state.images.filter(image => image.id === id))[0].clicked
+    let selected = (this.state.images.filter(image => image.id === id))
     // If image has not been clicked add point and rearrange images
-    if (!selected) {
-      
+    if (!selected[0].clicked) {
+      selected[0].clicked = true
+      this.setState(selected)
       this.setState({score: this.state.score + 1})
       this.shuffle(this.state.images)
       if (this.state.score >= this.state.top){
@@ -26,12 +27,21 @@ class App extends Component {
       }
       
     }else {
-      alert(`Game Over your score is:${this.state.score}`)      
-      this.setState({score: 0})
+      alert(`Game Over your score is: ${this.state.score}`)      
+      this.reset()
     }
-  };
+  }
+
   shuffle = (images) => {
     this.setState({images: images.sort(function() { return 0.5 - Math.random() })})
+  }
+
+  reset = () => {
+    this.state.images.forEach(element => {
+      element.clicked = false
+    })
+    this.setState({images: this.state.images})
+    this.setState({score: 0})
   }
   // Map over this.state.images and render a ImgCrd component for each image object
   render() {
