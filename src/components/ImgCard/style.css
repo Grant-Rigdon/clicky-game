@@ -1,0 +1,21 @@
+.card {
+  background-color: transparent;
+  /* box-shadow: 0 3px 6px #999, 0 3px 6px #999; */
+  width: 10rem;
+  margin: 5px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+/* .card > .img-container {
+  height: 60%;
+  overflow: hidden;
+  text-align: center;
+  background:#6CADDC;
+}
+.card > .img-container > img {
+  width: 60%
+} */
+
+

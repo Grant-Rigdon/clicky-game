@@ -1,0 +1,12 @@
+.container {
+  padding-top: 20px;
+  background-image: url("https://previews.123rf.com/images/eugenesergeev/eugenesergeev1509/eugenesergeev150900649/46098525-old-gray-stone-wall-seamless-background-photo-texture.jpg");
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+  box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 15px -4px rgba(31, 73, 125, 0.8);
+}
