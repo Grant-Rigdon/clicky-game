@@ -1,12 +1,13 @@
 .jumbotron {
     background-color: black;
     color: white;
+    margin-bottom: 10%;
 }
 
 #jtron {
     background-color: black;
     color: white;
-    padding: 50px;
+    padding: 0px 50px 0px 50px;
     text-align: center;
 }
 

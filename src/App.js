@@ -20,17 +20,22 @@ class App extends Component {
     if (!selected[0].clicked) {
       selected[0].clicked = true
       this.setState(selected)
-      this.setState({score: this.state.score + 1})
-      this.shuffle(this.state.images)
-      if (this.state.score >= this.state.top){
+      this.setState({score: this.state.score + 1}, () => {
+        if (this.state.score >= this.state.top){
         this.setState({top: this.state.score})
-      }
+        }
+      } )
+      this.shuffle(this.state.images)
+      
+      
       
     }else {
       alert(`Game Over your score is: ${this.state.score}`)      
       this.reset()
     }
   }
+
+
 
   shuffle = (images) => {
     this.setState({images: images.sort(function() { return 0.5 - Math.random() })})
@@ -40,8 +45,8 @@ class App extends Component {
     this.state.images.forEach(element => {
       element.clicked = false
     })
-    this.setState({images: this.state.images})
-    this.setState({score: 0})
+    this.setState({images: this.state.images, score: 0})
+    
   }
   // Map over this.state.images and render a ImgCrd component for each image object
   render() {
